@@ -18,7 +18,7 @@ chrome.storage.local.get('firstLoad', function(firstLoad) {
 });
 
 function reload() {
-  fetch('http://localhost:3004/v1/futureuhc')
+  fetch('https://bAPI.projectthing.tk/v1/futureuhc')
     .then(function(response) {
       return response.json()
       response = null
