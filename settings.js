@@ -43,6 +43,9 @@ $("#save").click(function() {
       regions.push($(this).attr("id"))
     }
   })
+    chrome.storage.local.set({
+      ignores: []
+    })
   chrome.storage.local.set({
     dnd: $("#dnd").is(":checked"),
     regions: regions,

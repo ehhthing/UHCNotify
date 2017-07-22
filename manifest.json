@@ -15,7 +15,7 @@
   "permissions": [
     "activeTab",
     "notifications",
-    "http://localhost/*",
+    "https://uhc.projectthing.tk/*",
     "storage",
     "unlimitedStorage"
   ]

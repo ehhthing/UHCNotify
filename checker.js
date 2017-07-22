@@ -18,7 +18,7 @@ chrome.storage.local.get('firstLoad', function(firstLoad) {
 });
 
 function reload() {
-  fetch('http://localhost:3004/v1/futureuhc')
+  fetch('https://uhc.projectthing.tk/v1/futureuhc')
     .then(function(response) {
       return response.json()
       response = null
@@ -72,7 +72,9 @@ function notify(id, time, server, region, gameMode, hosts, premium, slots, callb
     if (notifications.dnd == false &&
       notifications.ignores.indexOf(String(id)) == -1 &&
       (notifications.regions.indexOf(region) !== -1 || notifications.premium == premium) &&
-      (time - +new Date()) < notifications.notifyBefore) {
+      (time - +new Date()) < notifications.notifyBefore &&
+      Math.round((time - +new Date()) / 60000) > 0
+       ) {
       if (premium == true) {
         server = "BAC " + server
       }
